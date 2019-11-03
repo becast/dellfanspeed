@@ -1,0 +1,14 @@
+[Unit]
+Description=A Dell R710 Fan speed controller
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/dellfanspeed
+SyslogIdentifier=dellfanspeed
+ExecStart=/usr/bin/java -jar /opt/dellfanspeed/dellfanspeed.jar
+Type=simple
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
