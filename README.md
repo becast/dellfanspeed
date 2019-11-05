@@ -7,14 +7,14 @@
 
 ## Installation
 
-From Source:
-Clone the Repo and compile it with your preferred IDE.
-Upload the dellfancontrol.jar, /config/ and /lib/ to /opt/dellfanspeed
-Copy the dellfanspeed.service to your /etc/systemd/system folder and run systemctl enable dellfanspeed.service
+From Source:  
+Clone the Repo and compile it with your preferred IDE.  
+Upload the dellfancontrol.jar, /config/ and /lib/ to /opt/dellfanspeed  
+Copy the dellfanspeed.service to your /etc/systemd/system folder and run systemctl enable dellfanspeed.service  
 
-Binary:
-Download the package and extract it to /opt/dellfanspeed
-Copy the dellfanspeed.service to your /etc/systemd/system folder and run systemctl enable dellfanspeed.service
+Binary:  
+Download the package and extract it to /opt/dellfanspeed  
+Copy the dellfanspeed.service to your /etc/systemd/system folder and run systemctl enable dellfanspeed.service  
 
 ## Configuration
 
