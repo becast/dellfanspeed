@@ -9,15 +9,17 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class Checker implements Runnable{
-    private static Settings config = null;
     private static final Logger LOG = LoggerFactory.getLogger(Checker.class);
-    List<Integer> temps;
-    List<Integer> speed;
-    int currentspeed = 0;
-    public Checker(){
-        config = Settings.getInstance();
+    private List<Integer> temps;
+    private List<Integer> speed;
+    private int currentspeed = 0;
+    Checker(){
+        Settings config = Settings.getInstance();
         temps = config.getIntList("dellfanspeed.temperatures");
         speed = config.getIntList("dellfanspeed.speed");
+        if(temps.size() != speed.size()){
+            LOG.error("Temperatures not equal Speeds. Please check your fanspeed.conf. Temps: {}, Speeds: {}",temps.size(),speed.size());
+        }
     }
 
     private int speedCalc(Double temp){
@@ -38,11 +40,11 @@ public class Checker implements Runnable{
         }
     }
 
-    protected int getClosestIndex(final List<Integer>values, int value) {
+    private int getClosestIndex(final List<Integer> values, int value) {
         class Closest {
-            Integer dif;
-            int index = -1;
-        };
+            private Integer dif;
+            private int index = -1;
+        }
         Closest closest = new Closest();
         for (int i = 0; i < values.size(); ++i) {
             final int dif = Math.abs(value - values.get(i));
