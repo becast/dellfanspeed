@@ -31,8 +31,8 @@ dellfanspeed{
 }
 ```
 
-refresh = 35 - Time between temperature checks in seconds.
-temperatures = ["30","35","40","50","60"] - Array of temperatures to correspond with the set fan speeds below. You can have as many values as possible, the only caveat is that the same amount of Speeds are configured.
+refresh = 35 - Time between temperature checks in seconds.  
+temperatures = ["30","35","40","50","60"] - Array of temperatures to correspond with the set fan speeds below. You can have as many values as possible, the only caveat is that the same amount of Speeds are configured.  
 speed = ["15","20","30","38","-1"] - Array of Fan speeds in %, it must have the same amount of values as the temperature array above. e.g. at 30°C CPU the Fanspeed is 15%. -1 returns control to IPMI, if the temperature sinks below that treshold again, it will return to your configured values.
 
 ## Credits
